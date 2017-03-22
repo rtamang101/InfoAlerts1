@@ -86,7 +86,7 @@
                 </h3>
 
                 <div class="links">
-                    <a href="{{url('signin')}}">Login</a>
+                    <a href="{{url('login')}}">Login</a>
                     <!-- <a href="{{url('admin')}}">Admin Login</a> -->
                 </div>
             </div>
