@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 	<title>Login</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- <link href="css/style.css" rel='stylesheet' type='text/css'> -->
-	<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-	<script src="public/js/func.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="{{asset('css/materialize.min.css')}}"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 	<style>
             html, body {
                 background-color: #fff;
@@ -70,49 +70,39 @@
 </head>
 <body>
 <div class="flex-center position-ref full-height">
-	<!-- <div class="row">
-		<div class="col-md-6"> -->
 
-			<form class="form-horizontal" action="login" method="POST">
+			<form action="{{url('login')}}" method="POST">
 
 				<input type="hidden" name="_token" value="{{csrf_token()}}">
-				<fieldset>
-					<!-- <div id="legend">
-						<legend class="">Login Page</legend>
-					</div> -->
+
 					<div class="title m-b-md">
                     InfoAlerts
-                	</div>
-					<div class="control-group">
-						<label class="control-label" for="email">E-mail</label>
-						<div class="controls">
-							<input type="email"  name="email" placeholder="john@smith.com" class="form-control input-lg">
-							<!-- <p class="help-block">Please provide your E-mail</p> -->
-						</div>
-					</div>
+                	</div>                    
 
-					<div class="control-group">
-						<label class="control-label" for="password">Password</label>
-						<div class="controls">
-							<input type="password" id="password" name="password" placeholder="password" class="form-control input-lg">
-							<!-- <p class="help-block">Password should be at least 6 characters</p> -->
-						</div>
-					</div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                        <input id="email" type="email" class="validate" name="email">
+                        <label for="email" data-error="{{$errorEmail}}">Email</label>
+                        </div>
+                    </div>  
 
-					<div class="control-group">
-						<!-- Button -->
-						<div class="controls">
-							<button class="btn btn-success" type="submit">Login</button>
-						</div>
-					</div>
+					<div class="row">
+                        <div class="input-field col s12">
+                        <input id="password" type="password" class="validate" name="password">
+                        <label for="password" data-error="{{$errorPassword}}">Password</label>
+                        </div>
+                    </div>
 
-				</fieldset>
-			</form>
 
-	<!-- 	</div>
-	</div> -->
+				<button class="btn waves-effect waves-light" type="submit" name="action">Login</button>
+
+
+
+		  </form>
 </div>
 
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="{{asset('js/materialize.min.js')}}"></script>
 
 </body>
 </html>

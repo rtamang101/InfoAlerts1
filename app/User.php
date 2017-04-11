@@ -13,7 +13,15 @@ class User extends Authenticatable
      * The attributes that are mass assignable.
      *
      * @var array
+     *
      */
+
+    public function department(){
+
+        return $this->belongsTo('App\User');
+    }
+
+
     protected $fillable = [
         'name', 'email', 'password',
     ];
