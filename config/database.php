@@ -1,12 +1,12 @@
 <?php
-    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+    // $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-    $server = $url["host"];
-    $username = $url["user"];
-    $password = $url["pass"];
-    $db = substr($url["path"], 1);
+    // $server = $url["host"];
+    // $username = $url["user"];
+    // $password = $url["pass"];
+    // $db = substr($url["path"], 1);
 
-    $conn = new mysqli($server, $username, $password, $db);
+    // $conn = new mysqli($server, $username, $password, $db);
 
 
 return [
@@ -22,7 +22,7 @@ return [
     |
     */
 
-    'default' => env('CLEARDB_DATABASE_URL', 'mysql'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -50,10 +50,10 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => $host,
-            'database' => $database,
-            'username' => $username,
-            'password' => $password,
+            'host' => '127.0.0.1',
+            'database' => 'infoalerts',
+            'username' => 'root',
+            'password' => 'root',
             'port' => '3306',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',

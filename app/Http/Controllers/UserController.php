@@ -80,6 +80,8 @@ class UserController extends Controller
         }
         return redirect()->route('loginError');
     }
+
+
     public function admin($id){
         $user = User::find($id);
         return view('admin')
@@ -87,6 +89,8 @@ class UserController extends Controller
          ->with('id', $user->id)
          ->with('dep', $user->dep_id);
     }
+
+    
     public function client($id){
         $user = User::find($id);
                     $allAnnouncements = DB::table('messages')
